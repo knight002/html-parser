@@ -23,11 +23,11 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 	}
 	
 	protected function _initConfig()
-    {
+	{
 		//$this->bootstrap('config');
 		$appConfig = new Zend_Config($this->getOptions(), true);
 		Zend_Registry::set('config', $appConfig);
-        return $appConfig;
-    }
+		return $appConfig;
+	}
 
 }
