@@ -40,7 +40,7 @@ abstract class Application_Model_Sainsburys_Page
 	{
 		$html = Application_Model_Http_Client::httpRequest($this->url);
 		$this->domDocument = new DOMDocument();
-		$status = $this->domDocument->loadHTML($html);
+		$status = @$this->domDocument->loadHTML($html);
 		if($status)
 		{
 			$this->html = $html;

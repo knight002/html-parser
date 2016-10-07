@@ -22,6 +22,7 @@ class Application_Model_Sainsburys_Parser
 		{
 			$product = new Application_Model_Sainsburys_Product($link);
 			$details = $product->getAllDetails();
+			Application_Model_Console_Debug::printout($details['url'], Application_Model_Console_Debug::TEXT_Green);
 			$total += $details['unit_price'];
 			$products[] = (object)$details;
 		}
