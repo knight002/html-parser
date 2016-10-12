@@ -20,6 +20,8 @@ class Application_Model_Sainsburys_ProductList extends Application_Model_Sainsbu
 	{
 		$this->request();
 		$productLister = $this->domDocument->getElementById('productLister');
+		if(!$productLister instanceof DOMElement)
+			throw new Exception('Links not found');
 		$li = Application_Model_Dom_NodeList::getElementByTagNameClass($productLister, 'ul', 'productLister');
 		$li2 = $li->getElementsByTagName('li');
 		foreach($li2 as $item)
